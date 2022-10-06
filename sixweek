@@ -1,0 +1,39 @@
+package sixweek;
+
+class ECar{
+	int distance=0;
+	int battery=100;
+
+	public void dispDistance() {
+		System.out.println("주행거리: "+distance+"km");
+	}
+	
+	public void dispBattery() {
+		System.out.println("배터리: "+battery+"%");
+	}
+	
+	public void drive() {
+		distance += 1;
+		battery-=10;
+	}
+	
+	public static ECar getInstance() {
+		return new ECar();
+	}		
+}
+
+public class Car {
+	public static void main(String[] args) {
+		ECar car1 = ECar.getInstance();
+		
+		car1.dispDistance();
+		car1.dispBattery();
+		
+		car1.drive();
+		car1.drive();
+		
+		car1.dispDistance();
+		car1.dispBattery();
+
+	}
+}
